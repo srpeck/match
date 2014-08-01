@@ -1,0 +1,18 @@
+# Environmental variables
+.env
+
+# Postgres connection string
+.pgpass
+
+# SSL credentials
+ssl_credentials
+
+# npm packages
+node_modules
+
+# VIM
+*.swp
+*~
+
+# Log files
+*.log

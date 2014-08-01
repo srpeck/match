@@ -1,0 +1,21 @@
+table.map {
+    border-collapse: collapse;
+}
+
+table.map td {
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    vertical-align: middle;
+    text-align: center;
+}
+
+table.map td.empty {
+    background-image: url(../img/empty.png);
+}
+table.map td.notvisible {
+    background-image: url(../img/notvisible.png);
+}
+table.map td.unitR {
+    background-image: url(../img/unitR.png);
+}

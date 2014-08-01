@@ -1,0 +1,31 @@
+Playing with HTML5/JavaScript features that enable single page web applications, server sent events, web sockets, WebRTC data channels, and touch/mouse gesture browser UI.
+
+On Heroku: http://findgame.herokuapp.com
+
+The game matchmaking piece is a single page web application backed by a RESTful web service in NodeJS. It uses server sent events to refresh the lists of games and players.
+
+The game itself uses WebRTC data channels; Socket.io is only used as a signalling server. Once signalling is complete, the game is run as a fully peer-to-peer mesh network with a shared game state (the server can go down and the game is unaffected). The game UI uses HammerJS for touch/mouse gestures.
+
+Prototype design:
+- Single page web application
+- NodeJS web service with SSE for matchmaking
+- Socket.io web sockets for signalling
+- WebRTC data channels for shared game state
+- HammerJS for gestures
+
+If I were actually designing this functionality instead of prototyping/playing with technologies, I would consider one of the two options listed below.
+
+Server-heavy design:
+- Single page web application
+- Web sockets for matchmaking, signalling, and shared game state
+
+Server-light design:
+- Single page web application
+- Web sockets for signalling
+- WebRTC data channels for matchmaking and shared game state
+
+Either of these designs would also include a key feature missing from the prototype: player chat. This would be trivial to do with either web sockets or WebRTC data channels (in fact, I removed it from the game prototype since it made the user experience on mobile too complicated).
+
+Other key pieces of functionality missing:
+- Persistent player login instead of allowing multiple uses of the same name - implemented similar to https://github.com/srpeck/unlocks
+- Redis for in-memory shared state across multiple servers

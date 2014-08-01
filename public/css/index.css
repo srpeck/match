@@ -1,0 +1,9 @@
+.center {
+    margin: auto;
+    width: 95%;
+}
+
+input, div {
+	font-family: sans-serif;
+	font-size: 1em;
+}
